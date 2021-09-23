@@ -26,14 +26,14 @@ public class StockItem implements Comparable<StockItem> {
         return price;
     }
 
-    public int availableQuantity() {
-        return quantityInStock - reserved;
-    }
-
     public void setPrice(double price) {
         if (price > 0){
             this.price = price;
         }
+    }
+
+    public int availableQuantity() {
+        return quantityInStock - reserved;
     }
 
     public void adjustStock(int quantity){
@@ -81,8 +81,8 @@ public class StockItem implements Comparable<StockItem> {
         throw new NullPointerException();
     }
 
-    @Override
-    public String toString() {
+
+    public String displayInfo() {
         return this.name + ": price " + this.price + ". Reserved: " + this.reserved;
     }
 }

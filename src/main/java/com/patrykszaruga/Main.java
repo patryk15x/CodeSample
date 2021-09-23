@@ -6,11 +6,13 @@ public class Main {
         StockList stockList = new StockList();
         populate(stockList);
 
-        System.out.println(stockList);
+        stockList.displayList();
 
         Basket adasBasket = new Basket("Ada");
         adasBasket.sellItem(adasBasket, "car", 1, stockList);
-        System.out.println(adasBasket);
+        adasBasket.displayBasket();
+
+
 
         adasBasket.checkOut(adasBasket, stockList);
     }
